@@ -49,7 +49,7 @@ async def generate_message(user_input):
 # Streamlit UI
 st.set_page_config(page_title="Business Communication Assistant", layout="centered")
 st.title("Business communication assistant")
-st.write("Turn technical updates into business-ready messages for stakeholders..")
+st.write("Turn technical updates into business-ready messages for stakeholders.")
 
 user_input = st.text_area("Enter a technical message", placeholder="e.g. We implemented a low-level TCP socket optimization...")
 

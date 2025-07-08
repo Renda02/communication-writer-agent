@@ -1,7 +1,6 @@
 # Single Agent: AI-powered assistant applications
 
-This repository contains 2 Streamlit applications that leverage AI agents to assist with business communications and project ideation. This project is created for educational purposes to demonstrate practical applications of AI in business and software development.
-
+This repository contains 2 Streamlit applications that leverage AI agents to assist with business communications and project ideation. 
 ## 📋 Table of contents
 - [Overview](#overview)
 - [Applications](#applications)
