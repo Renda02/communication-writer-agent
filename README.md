@@ -1,121 +1,106 @@
-# Single Agent: AI-powered assistant applications
+# Business Communication Assistant (comms.py)
 
-This repository contains 2 Streamlit applications that leverage AI agents to assist with business communications and project ideation. 
-## 📋 Table of contents
-- [Overview](#overview)
-- [Applications](#applications)
-  - [Business communication assistant](#business-communication-assistant)
-  - [Project ideas generator](#project-ideas-generator)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Environment setup](#environment-setup)
-- [Dependencies](#dependencies)
-- [Learning resources](#learning-resources)
-- [Troubleshooting](#troubleshooting)
+A Streamlit-powered AI application that transforms technical messages into business-friendly communications for stakeholders like executives, sales teams, and non-technical decision makers.
 
-## Overview
+##  Purpose
 
-This project includes 2 AI-powered tools:
+Technical teams often struggle to communicate effectively with business stakeholders. This application bridges that gap by automatically rewriting technical updates, engineering reports, and developer communications into language that resonates with business audiences.
 
-1. **Business communication assistant**: Transforms technical messages into business-friendly communications for stakeholders
-2. **Project ideas generator**: Creates customized software project ideas with roadmaps based on skill level
+##  Features
 
-Both applications are built with Streamlit and utilize AI agents to generate helpful content.
+- **Business Impact First**: Prioritizes outcomes and business value over technical implementation details
+- **Jargon Translation**: Converts technical terms and acronyms into plain English
+- **Professional Tone**: Ensures direct, friendly, and professional communication style
+- **Grammar & Flow**: Improves readability and message structure
+- **Stakeholder-Ready**: Optimized for executives, sales teams, and business decision makers
 
-## Applications
+## Quick Start
 
-### Business communication assistant
+### Prerequisites
 
-Located in `comms.py`, this application helps technical teams communicate more effectively with non-technical stakeholders like executives and sales teams.
+- Python 3.7+
+- OpenAI API key
+- Required Python packages (see Dependencies)
 
-**Features:**
-- Rewrites technical messages with business impact first
-- Translates technical jargon into business-friendly language
-- Replaces acronyms and internal language with plain English
-- Improves grammar, flow, and professional tone
+### Setup
 
-### Project ideas generator
+1. **Environment Configuration**
+   
+   Create a `.env` file in your project directory:
+   ```env
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-Located in `projects-app.py`, this application generates software project ideas tailored to different skill levels.
+2. **Install Dependencies**
+   ```bash
+   pip install streamlit python-dotenv asyncio
+   ```
 
-**Features:**
-- Creates project ideas for beginner, intermediate, and advanced skill levels
-- Suggests relevant technologies and skills for each project
-- Provides guidance on contributing to related open-source projects
-- Includes a 4-week learning and development roadmap
+3. **Ensure Agent Module**
+   
+   Make sure you have the `agents.py` module with `Agent` and `Runner` classes available in your project directory.
 
-## Installation
+### Run the Application
 
-1. Clone this repository:
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
-
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-### Running the business communication assistant:
 ```bash
 streamlit run comms.py
 ```
 
-### Running the project ideas generator:
-```bash
-streamlit run projects-app.py
-```
+The application will open in your browser at `http://localhost:8501`
 
-## Environment setup
+## 💻 Usage
 
-Both applications require an OpenAI API key. Create a `.env` file in the root directory with the following content:
+1. **Input**: Enter your technical message in the text area
+2. **Process**: Click "Rewrite message" to transform the content
+3. **Output**: Review both the original and rewritten versions displayed side-by-side
 
-```
-OPENAI_API_KEY=your_openai_api_key_here
-```
+### Example
+
+**Before (Technical):**
+> We implemented a low-level TCP socket optimization that reduced latency by 15ms and improved throughput by 23%. The refactoring involved restructuring our connection pooling architecture and implementing keep-alive mechanisms.
+
+**After (Business-Friendly):**
+> We improved our system performance, resulting in 15ms faster response times and 23% better data processing capacity. This enhancement means our customers will experience noticeably faster load times and more reliable service during peak usage periods.
+
+## 🏗️ Technical Architecture
+
+
+### Key Components
+
+- **Agent**: Configures the AI assistant with specific business communication instructions
+- **Runner**: Executes the agent and manages the OpenAI API interaction
+- **Streamlit UI**: Provides the web interface for input and output
 
 ## Dependencies
 
-- Python 3.7+
-- Streamlit
-- asyncio
-- dotenv
-- Custom `agents` module (Agent and Runner classes)
+### Core Requirements
 
-Note: Make sure you have the `agents` module available in your project directory or installed as a package.
+- `streamlit`: Web application framework
+- `python-dotenv`: Environment variable management
+- `asyncio`: Asynchronous programming support
+- `os`: Operating system interface
 
-## Contributing
+### Custom Modules
 
-This project is for educational purposes. If you'd like to use it as a learning resource:
+- `agents`: Contains `Agent` and `Runner` classes for OpenAI SDK integration
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a pull request
+## 🔧 Configuration
 
-## Learning resources
-This project can serve as a practical learning resource for:
+### Agent Instructions
 
-- **Streamlit application development**: Learn how to build interactive web applications with Python
-- **OpenAI API integration**: Understand how to use AI capabilities in your applications
-- **Environment management**: Practice proper handling of API keys and environment variables
-- **Version control best practices**: Learn what files to exclude from version control
-- **Async programming**: See practical examples of asynchronous programming with Python
+The AI agent follows strict guidelines:
 
-Before you begin:
+**Always Do:**
+- Start with business impact and outcomes
+- Use plain English explanations
+- Maintain professional tone
+- Correct grammar and improve flow
 
-- Verify the `.env` and `.gitignore` files to understand configuration
-- Look at the `agents.py` module to understand the core Agent architecture
-- Explore the individual application files (comms.py and projects-app.py)
+**Never Do:**
+- Invent or fabricate results
+- Remove essential technical context
+- Use unexplained acronyms or jargon
+- Include confidential information
 
-## Troubleshooting
 
-Common issues and solutions:
 
-- **API key errors**: Make sure your .env file is properly formatted and the API key is valid
-- **Module not found errors**: Ensure you've installed all dependencies and activated your virtual environment
-- **Streamlit display issues**: Check the Streamlit documentation at https://docs.streamlit.io# AI-powered assistant applications
