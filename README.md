@@ -1,4 +1,4 @@
-# Business Communication Assistant (comms.py)
+# Business communication assistant
 
 A Streamlit-powered AI application that transforms technical messages into business-friendly communications for stakeholders like executives, sales teams, and non-technical decision makers.
 
