@@ -3,3 +3,4 @@ venv/
 
 # Ignore API_key secrets
 .env
+projects-app.py
